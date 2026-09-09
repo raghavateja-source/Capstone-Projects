@@ -1,4 +1,4 @@
-# ⚡ Final Technical Report: PowerGrid Utility Intelligence & Predictive Maintenance Strategy
+# Final Technical Report: PowerGrid Utility Intelligence & Predictive Maintenance Strategy
 
 **Domain:** Electrical Power Grid Infrastructure & Asset Management  
 **Project Objective:** Predictive Grid Failure Classification & Financial Risk Score Optimization  
@@ -11,7 +11,9 @@
 
 Electrical utility power grids form the backbone of modern industrial and residential infrastructure. Sudden equipment breakdowns—such as high-voltage transformer explosions or circuit breaker trips—result in catastrophic regional blackouts, severe infrastructural damage, and millions of dollars in unexpected utility revenue loss and regulatory fines.
 
-This technical report delivers a data-driven, machine learning framework to transition power grid operations from reactive, time-based maintenance to **Predictive Risk-Based Maintenance**. By processing multi-dimensional telemetry, health diagnostic metrics, and financial penalty metrics across **50,500 electrical utility assets**, our automated pipeline classifies failure risk (`grid_failure_flag`) and monetizes risk exposure into an asset-level **Expected Financial Impact Score** ($RiskScore = P(Failure) \times (\text{Revenue Loss} + \text{Regulatory Penalty})$).
+This technical report delivers a data-driven, machine learning framework to transition power grid operations from reactive, time-based maintenance to **Predictive Risk-Based Maintenance**. By processing multi-dimensional telemetry, health diagnostic metrics, and financial penalty metrics across 
+**50,500 electrical utility assets**, our automated pipeline classifies failure risk (`grid_failure_flag`) and monetizes risk exposure into an asset-level 
+**Expected Financial Impact Score** ($RiskScore = P(Failure) \times (\text{Revenue Loss} + \text{Regulatory Penalty})$).
 
 ---
 
@@ -79,10 +81,10 @@ Four distinct model families were trained with `class_weight='balanced'`:
 
 | Model Classifier | Accuracy | Precision | Recall | F1-Score | **ROC-AUC Score** |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| 🥇 **Random Forest Classifier** | **0.8088** | **0.8020** | **0.7500** | **0.7751** | **`0.8987`** |
-| 🥈 **Support Vector Machine (SVM)** | 0.7629 | 0.7148 | 0.7657 | 0.7394 | **`0.8444`** |
-| 🥉 **Logistic Regression** | 0.7518 | 0.7051 | 0.7479 | 0.7259 | **`0.8371`** |
-| 4️⃣ **Decision Tree Classifier** | 0.7426 | 0.7037 | 0.7155 | 0.7095 | **`0.7397`** |
+|  **Random Forest Classifier** | **0.8088** | **0.8020** | **0.7500** | **0.7751** | **`0.8987`** |
+| **Support Vector Machine (SVM)** | 0.7629 | 0.7148 | 0.7657 | 0.7394 | **`0.8444`** |
+|  **Logistic Regression** | 0.7518 | 0.7051 | 0.7479 | 0.7259 | **`0.8371`** |
+|  **Decision Tree Classifier** | 0.7426 | 0.7037 | 0.7155 | 0.7095 | **`0.7397`** |
 
 ### 6.2 Champion Model Selection Rationale
 **Random Forest Classifier** was selected as the champion model based on achieving the highest **ROC-AUC score of 0.8987**. The ensemble architecture effectively captures non-linear interactions between vibration levels, temperature spikes, and maintenance overdue days without overfitting.
